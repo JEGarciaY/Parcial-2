@@ -26,38 +26,36 @@ public class Main {
         //Inicializar objetos
 
         // Inicializar objeto estudiante
-        Student newStudent = new Student(10, "Daniel", "daniel@gmail.com");
-        Student newStudent1 = new Student(11, "Juanito", "juanito@gmail.com");
+        Student newStudent = new Student(111, "Daniel", "daniel@gmail.com");
         // Guardar estudiante en la base de datos
         studentController.insertNewStudent(newStudent);
         // Mostrar datos en las vistas
         studentController.displayAllStudents();
 
         //Inicializar objeto profesor
-        Teacher newTeacher = new Teacher(13, "Pablo", "Ciencias Sociales");
-        teacherController.insertNewTeacher(newTeacher);
+        Teacher newTeacher1 = new Teacher(111, "Pablo", "Ciencias Sociales");
+        teacherController.insertNewTeacher(newTeacher1);
         teacherController.displayAllTeachers();
 
         //Inicializar objeto curso
-        Course newCourse = new Course(14, "Historia", "políticos, sociales, económicos, científicos, tecnológicos...", true, newTeacher.getId());
+        Course newCourse = new Course(111, "Historia", "políticos, sociales, económicos, científicos, tecnológicos...", true, newTeacher1.getId());
         courseController.insertNewCourse(newCourse);
         courseController.displayAllCourses();
 
         //Inicializar objeto inscripcion
-        Enrollment newEnrollment = new Enrollment(15,newStudent1.getId(),newTeacher.getId());
-        enrollmentController.insertNewEnrollment(newEnrollment);
+        Enrollment newEnrollment1 = new Enrollment(111,newStudent.getId(), newCourse.getId());
+        enrollmentController.insertNewEnrollment(newEnrollment1);
         enrollmentController.displayAllEnrollments();
 
         //Inicializar objeto tipo calificacion
-        GradeType newGradeType = new GradeType(16,"Parcial",0.6);
+        GradeType newGradeType = new GradeType(111,"Exam",6.0223);
         gradeTypeController.insertNewGradeType(newGradeType);
         gradeTypeController.displayAllGradeTypes();
 
         //Inicializar objeto calificacion
-        Grades newGrades = new Grades(17,newEnrollment.getId(),newGradeType.getId(),12.0);
+        Grades newGrades = new Grades(111, newEnrollment1.getId(),newGradeType.getId(),12.33333);
         gradesController.insertNewGrades(newGrades);
         gradesController.displayAllGrades();
-
 
     }
 }

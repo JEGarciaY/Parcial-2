@@ -9,7 +9,7 @@ public class ViewEnrollment implements IMostrarMensaje {
     public void displayListEnrollments(List<Enrollment> enrollments) {
         System.out.println(" == Lista de inscripciones == ");
         for (Enrollment enrollment : enrollments) {
-            System.out.println("Id Inscripcion: " + enrollment.getId() + ", Estudiante ID: " + enrollment.getStudentId() + ", Profesor ID: " + enrollment.getTeacherId());
+            System.out.println("Id Inscripcion: " + enrollment.getId() + ", Estudiante ID: " + enrollment.getStudentId() + ", Profesor ID: " + enrollment.getCourseId());
         }
     }
 }

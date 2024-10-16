@@ -9,7 +9,7 @@ public class ViewGrades implements IMostrarMensaje {
     public void displayListGrades(List<Grades> grades) {
         System.out.println(" == Lista de Calificaciones == ");
         for (Grades grade : grades) {
-            System.out.println("Id Curso: " + grade.getId() + ", Inscripcion ID: " + grade.getEnrollmentId() + ", Tipo Calificacion ID: " + grade.getGradeTypeId() + ", EstadoCalificacion: " + grade.getGrade());
+            System.out.println("Id Curso: " + grade.getId() + ", Inscripcion ID: " + grade.getEnrollmentId() + ", Tipo Calificacion ID: " + grade.getGradeTypeId() + ", EstadoCalificacion: " );
         }
     }
 }

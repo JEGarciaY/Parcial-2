@@ -12,12 +12,12 @@ import java.util.List;
 public class Enrollment {
     private int id;
     private int studentId;
-    private int teacherId;
+    private int courseId;
 
-    public Enrollment(int id, int studentId, int teacherId) {
+    public Enrollment(int id, int studentId, int courseId) {
         this.id = id;
         this.studentId = studentId;
-        this.teacherId = teacherId;
+        this.courseId = courseId;
     }
 
     public int getId() {
@@ -28,19 +28,19 @@ public class Enrollment {
         return studentId;
     }
 
-    public int getTeacherId() {
-        return teacherId;
+    public int getCourseId() {
+        return courseId;
     }
 
     public static void insertEnrollment(Enrollment enrollment) {
         Connection con = connection.getConnection();
 
-        String sql = "INSERT INTO enrollment (id, studentId, teacherId) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO enrollment (id, student_id, course_id) VALUES (?, ?, ?)";
 
         try (PreparedStatement statement = con.prepareStatement(sql)) {
             statement.setInt(1, enrollment.getId());
             statement.setInt(2, enrollment.getStudentId());
-            statement.setInt(3, enrollment.getTeacherId());
+            statement.setInt(3, enrollment.getCourseId());
 
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -60,8 +60,8 @@ public class Enrollment {
             while(rs.next()) {
                 Enrollment enrollment = new Enrollment(
                         rs.getInt("id"),
-                        rs.getInt("studenId"),
-                        rs.getInt("teacherId")
+                        rs.getInt("student_id"),
+                        rs.getInt("course_id")
                 );
                 enrollments.add(enrollment);
             }

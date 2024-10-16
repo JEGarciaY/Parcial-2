@@ -8,9 +8,9 @@ import java.util.List;
 
 public class ViewGradeType implements IMostrarMensaje {
     public void displayListGradeType(List<GradeType> gradeTypes) {
-        System.out.println(" == Lista de Cursos == ");
+        System.out.println(" == Lista de Tipos Calificaciones == ");
         for (GradeType gradeType : gradeTypes) {
-            System.out.println("Id Curso: " + gradeType.getId() + ", Nombre: " + gradeType.getName()+ "Peso: "+ gradeType.getWheight());
+            System.out.println("Id Curso: " + gradeType.getId() + ", Nombre: " + gradeType.getName()+ "Peso: "+ gradeType.getWeight());
         }
     }
 }

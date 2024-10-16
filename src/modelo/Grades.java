@@ -15,7 +15,7 @@ public class Grades {
     private int gradeTypeId;
     private double grade;
 
-    public Grades(int id, int enrollmentId, int gradeTypeId, double grades) {
+    public Grades(int id, int enrollmentId, int gradeTypeId, double grade) {
         this.id = id;
         this.enrollmentId = enrollmentId;
         this.gradeTypeId = gradeTypeId;
@@ -42,7 +42,7 @@ public class Grades {
     public static void insertGrades(Grades grades) {
         Connection con = connection.getConnection();
 
-        String sql = "INSERT INTO grades (id, enrollment_id, grade_type_id, grade) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO grades (id, enrrollment_id, grade_type_id, grade) VALUES (?, ?, ?, ?)";
 
         try (PreparedStatement statement = con.prepareStatement(sql)) {
             statement.setInt(1, grades.getId());
@@ -61,16 +61,16 @@ public class Grades {
         Connection con = connection.getConnection();
         List<Grades> grades = new ArrayList<>();
 
-        String sql = "SELECT * FROM enrollment";
+        String sql = "SELECT * FROM grades";
 
         try (PreparedStatement statement = con.prepareStatement(sql)) {
             ResultSet rs = statement.executeQuery();
             while(rs.next()) {
                 Grades grades1 = new Grades(
                         rs.getInt("id"),
-                        rs.getInt("EnrollmentId"),
-                        rs.getInt("GretTypeId"),
-                        rs.getDouble("grades")
+                        rs.getInt("Enrrollment_id"),
+                        rs.getInt("GretType_id"),
+                        rs.getDouble("grade")
                 );
                 grades.add(grades1);
             }
