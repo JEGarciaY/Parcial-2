@@ -26,34 +26,34 @@ public class Main {
         //Inicializar objetos
 
         // Inicializar objeto estudiante
-        Student newStudent = new Student(111, "Daniel", "daniel@gmail.com");
+        Student newStudent = new Student(1, "Daniel", "daniel@gmail.com");
         // Guardar estudiante en la base de datos
         studentController.insertNewStudent(newStudent);
         // Mostrar datos en las vistas
         studentController.displayAllStudents();
 
         //Inicializar objeto profesor
-        Teacher newTeacher1 = new Teacher(111, "Pablo", "Ciencias Sociales");
+        Teacher newTeacher1 = new Teacher(1, "Pablo", "Ciencias Sociales");
         teacherController.insertNewTeacher(newTeacher1);
         teacherController.displayAllTeachers();
 
         //Inicializar objeto curso
-        Course newCourse = new Course(111, "Historia", "políticos, sociales, económicos, científicos, tecnológicos...", true, newTeacher1.getId());
+        Course newCourse = new Course(1, "Historia", "políticos, sociales, económicos, científicos, tecnológicos...", true, newTeacher1.getId());
         courseController.insertNewCourse(newCourse);
         courseController.displayAllCourses();
 
         //Inicializar objeto inscripcion
-        Enrollment newEnrollment1 = new Enrollment(111,newStudent.getId(), newCourse.getId());
+        Enrollment newEnrollment1 = new Enrollment(1,newStudent.getId(), newCourse.getId());
         enrollmentController.insertNewEnrollment(newEnrollment1);
         enrollmentController.displayAllEnrollments();
 
         //Inicializar objeto tipo calificacion
-        GradeType newGradeType = new GradeType(111,"Exam",6.0223);
+        GradeType newGradeType = new GradeType(1,"name",50.5);
         gradeTypeController.insertNewGradeType(newGradeType);
         gradeTypeController.displayAllGradeTypes();
 
         //Inicializar objeto calificacion
-        Grades newGrades = new Grades(111, newEnrollment1.getId(),newGradeType.getId(),12.33333);
+        Grades newGrades = new Grades(1, newEnrollment1.getId(),newGradeType.getId(),2.5);
         gradesController.insertNewGrades(newGrades);
         gradesController.displayAllGrades();
 

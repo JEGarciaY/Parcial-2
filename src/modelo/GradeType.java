@@ -35,7 +35,8 @@ public class GradeType {
     public static void insertGradeType(GradeType grade_type) {
         Connection con = connection.getConnection();
 
-        String sql = "INSERT INTO grades (id, name, weight) VALUES (?, ?, ?)";
+
+        String sql = "INSERT INTO grades (id,name1, weight) VALUES (?, ?, ?)";
 
         try (PreparedStatement statement = con.prepareStatement(sql)) {
             statement.setInt(1, grade_type.getId());
@@ -60,7 +61,7 @@ public class GradeType {
             while(rs.next()) {
                 GradeType gradeType = new GradeType(
                         rs.getInt("id"),
-                        rs.getString("name"),
+                        rs.getString("name1"),
                         rs.getDouble("weight")
                 );
                 gradeTypes.add(gradeType);
